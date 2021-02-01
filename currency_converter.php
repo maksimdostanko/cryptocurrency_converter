@@ -1,11 +1,6 @@
 <?php
 /**
  * Plugin Name:     Currency Converter
- * Plugin URI:       https://github.com/....
- * Description:     it is Currency Converter
- * Author:          max
- * Author URI:       https://dxfgdf
- * Text Domain:     converter_converter
  * Version:         0.1.0
  *
  * @package         currency_converter
