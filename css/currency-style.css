@@ -1,0 +1,131 @@
+
+/* Exchange Box*/
+
+@media (max-width: 1200px) {
+	.dropdown.bootstrap-select.currency_from, 
+	.dropdown.bootstrap-select.currency_to {
+		flex-grow: 1;
+	}
+}
+
+.exchange-box {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+    max-width: 1200px;
+	padding: 50px 0px;
+	align-items: center;
+}
+
+.exchange-left {
+	flex-grow: 1;
+}
+
+.exchange-center {
+	flex-grow: 1;
+	text-align: center;
+	font-size: 30px;
+    color: #a8c9d8;
+}
+
+@media (max-width: 1200px) {
+	.exchange-center {
+		flex-basis: 100%;
+	    order: 1;
+	}
+}
+
+.exchange-center:hover {
+	cursor: pointer;
+	color: #193f48;
+}
+
+.exchange-right {
+	flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+	.exchange-right {
+		flex-basis: 100%;
+	}
+}
+
+.exchange-from {
+	display: flex;
+	line-height: 48px;
+    border-radius: 4px;
+    transition: 0.3s all;
+}
+
+@media (max-width: 1200px) {
+	.exchange-from {
+		margin-bottom: 15px;
+	}
+}
+
+.exchange-from input[type="number"] {
+	width: 60%;
+	border: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 48px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border: 1px solid #bbdfef;
+	background-color: #f6fcff;
+}
+
+@media (max-width: 1200px) {
+	.exchange-from input[type="number"] {
+		width: 50%;
+	}
+}
+
+.exchange-from img {
+	margin-right: 8px;
+	width: 30px;
+}
+
+.dropdown-menu.show {
+	max-width: 200px;
+}
+
+.exchange-from .btn {
+	padding-left: 18px;
+	padding-right: 18px;
+	line-height: 48px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background: #bbdfef;
+}
+
+.exchange-from .btn-light {
+	border: 0;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+	width: 270px;
+}
+
+@media (max-width: 1200px) {
+	.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+		width: 210px;
+	}
+}
+
+.dropdown-item {
+	padding: 2px 12px;
+	font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+	.filter-option .full-name {
+		display: none;
+	}
+}
+
+/* Remove outline on the forms and links */
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
