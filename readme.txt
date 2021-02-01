@@ -1,1 +1,0 @@
-Cryptocurrency converter plugin

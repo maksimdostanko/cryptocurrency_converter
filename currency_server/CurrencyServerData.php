@@ -2,8 +2,7 @@
 
 class CurrencyServerData
 {
-	private $cacheTime = false;
-	private $fromCache = 60 * 60;
+	private $cacheTime;
 
 	// debug
 	private $debug = false;
@@ -13,23 +12,30 @@ class CurrencyServerData
 
 	public function __construct()
 	{
-
+		$cacheTime = 5 * 60;
+		// get from admin settings
+		$frequency_value = get_option('frequency_value');
+		if (!empty($frequency_value)){
+			$cacheTime =$frequency_value;
+		}
+		$this->setCacheTime($cacheTime);
 	}
 
 	/**
-	 * Cache timeout.
+	 * Set Cache timeout.
 	 * @param $cacheTime
 	 */
 	public function setCacheTime($cacheTime)
 	{
 		$this->cacheTime = $cacheTime;
+	}
 
-		// get from admin settings
-		$frequency_value = get_option('frequency_value');
-		if (!empty($frequency_value)){
-			$this->cacheTime =$frequency_value;
-		}
-
+	/**
+	 * @return bool - Cache timeout.
+	 */
+	public function getCacheTime()
+	{
+		return $this->cacheTime ;
 	}
 
 	/**
@@ -70,8 +76,6 @@ class CurrencyServerData
 		return $arr;
 	}
 
-
-
 	/**
 	 * Get currencies list from server data
 	 * @return array - array of currency objects (name, symbol)
@@ -90,8 +94,6 @@ class CurrencyServerData
 		}
 		return $arr;
 	}
-
-
 
 	/**
 	 * Get currency exchange rates list
@@ -115,7 +117,7 @@ class CurrencyServerData
 			if ($currencyServerResponse == null) {
 				return null;
 			}
-			wp_cache_set($cache_key, $currencyServerResponse, null, $this->cacheTime);
+			wp_cache_set($cache_key, $currencyServerResponse, null, $this->getCacheTime());
 			$this->fromCache = false;
 		} else {
 			$this->fromCache = true;
@@ -171,8 +173,6 @@ class CurrencyServerData
 		return $decodedData;
 	}
 
-
-
 	function debugInfo()
 	{
 		echo "<h1>Debug info:</h1>";
@@ -182,7 +182,6 @@ class CurrencyServerData
 		echo $this->response;
 		echo '</pre>';
 	}
-
 
 }
 
