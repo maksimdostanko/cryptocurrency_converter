@@ -8,7 +8,7 @@
 
 
 /**
- * shortcode for currency exchanger: [cryptoCurrencyConverter]
+ * shortcode for currency converter: [cryptoCurrencyConverter]
  */
 
 define('CURRENCY_EXCHANGE_PLUGIN_DIR', dirname(__FILE__) . '/');
